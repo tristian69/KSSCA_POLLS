@@ -1,0 +1,7 @@
+*.log
+^.iml
+.idea
+db.sqlite3
+*.pyc
+__pycache__
+

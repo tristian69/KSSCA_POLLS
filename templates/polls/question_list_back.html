@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KSSCA TEST SITE</title>
+  </head>
+
+  <body>
+    <a href="index.html">
+      <h1>KSSCA TEST SITE 한국시스템반도체협동조합</h1>
+    </a>
+
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'bootstrap.min.css' %}"
+    />
+    <div class="container my-3">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일시</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if question_list %} {% for question in question_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>
+              <a href="{% url 'polls:detail' question.id %}"
+                >{{ question.subject }}</a
+              >
+            </td>
+            <td>{{ question.create_date }}</td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="3">질문이 없습니다.</td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+  
+  </body>
+</html>

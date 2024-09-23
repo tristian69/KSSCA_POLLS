@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'bootstrap.min.css' %}"
+    />
+    <!-- polls CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>KSSCA TEST SITE !!!</title>
+    <style>
+      h2 {
+        text-align: left;
+      }
+      h3 {
+        text-align: right;
+      }
+      h4 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="{%url 'polls:index' %}">
+      <h4>KSSCA TEST SITE</h4>
+    </a>
+      <a href="{%url 'polls:index' %}"> 
+      <h3>한국시스템반도체협동조합</h3>
+    </a>
+
+        <!-- 네비게이션바 -->
+        {% include "navbar.html" %}
+
+        <!-- 기본 템플릿 안에 삽입될 내용 Start -->
+        {% block content %} {% endblock %}
+        <!-- 기본 템플릿 안에 삽입될 내용 End -->
+        <!-- Bootstrap JS -->
+        <script src="{% static 'bootstrap.min.js' %}"></script>
+      </body>
+    </html>
+  </body>
+</html>
